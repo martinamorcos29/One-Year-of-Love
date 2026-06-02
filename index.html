@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>One Year of Love ❤️</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lato:wght@300;400&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --cream: #fdf6ee; --warm: #f5e6d3; --blush: #e8c5b0;
+    --dusty: #c49a82; --wine: #8b4a4a; --dark: #3d2b2b;
+    --ink: #2a1a1a; --tape: rgba(255,220,150,0.55); --tape2: rgba(200,220,255,0.5);
+  }
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: var(--cream);
+    background-image:
+      radial-gradient(circle at 20% 20%, rgba(232,197,176,0.3) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(196,154,130,0.2) 0%, transparent 50%);
+    font-family: 'Lato', sans-serif;
+    color: var(--ink);
+    overflow-x: hidden;
+  }
+  .hero {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; padding: 40px 20px; position: relative;
+  }
+  .hero::before {
+    content: ''; position: absolute; inset: 0;
+    background-image:
+      repeating-linear-gradient(0deg, transparent, transparent 39px, rgba(196,154,130,0.12) 40px),
+      repeating-linear-gradient(90deg, transparent, transparent 39px, rgba(196,154,130,0.08) 40px);
+    pointer-events: none;
+  }
+  .hero-inner {
+    position: relative;
+    background: rgba(255,255,255,0.7);
+    border: 1px solid rgba(196,154,130,0.4);
+    border-radius: 2px; padding: 60px 70px; max-width: 680px;
+    box-shadow: 4px 4px 0 rgba(196,154,130,0.2), 8px 8px 0 rgba(196,154,130,0.1);
+  }
+  .hero-inner::before {
+    content: '❤️'; position: absolute; top: -18px; left: 50%;
+    transform: translateX(-50%); font-size: 32px;
+    animation: heartbeat 2s ease-in-out infinite;
+  }
+  @keyframes heartbeat {
+    0%, 100% { transform: translateX(-50%) scale(1); }
+    50% { transform: translateX(-50%) scale(1.15); }
+  }
+  .site-title {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(2.8rem, 8vw, 4.5rem);
+    color: var(--wine); letter-spacing: -1px; line-height: 1.1; margin-bottom: 16px;
+  }
+  .names {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    font-style: italic; color: var(--dusty); letter-spacing: 3px; margin-bottom: 24px;
+  }
+  .date-badge {
+    display: inline-block; background: var(--warm); border: 1px solid var(--blush);
+    padding: 8px 24px; font-size: 0.85rem; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--wine); font-weight: 300; margin-bottom: 28px;
+  }
+  .days-counter { display: flex; align-items: baseline; justify-content: center; gap: 8px; margin-top: 8px; }
+  .days-number { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--wine); line-height: 1; }
+  .days-label { font-size: 0.9rem; color: var(--dusty); letter-spacing: 1px; text-transform: uppercase; }
+  .scroll-hint {
+    position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+    color: var(--blush); font-size: 1.5rem; animation: bounce 2s ease-in-out infinite;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: translateX(-50%) translateY(0); }
+    50% { transform: translateX(-50%) translateY(8px); }
+  }
+  .section-heading {
+    font-family: 'Dancing Script', cursive;
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    color: var(--wine); text-align: center; margin-bottom: 48px; position: relative;
+  }
+  .section-heading::after {
+    content: ''; display: block; width: 80px; height: 1px;
+    background: var(--blush); margin: 12px auto 0;
+  }
+  .photos-section { padding: 60px 20px; max-width: 1100px; margin: 0 auto; }
+  .photos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 36px; padding: 20px 10px;
+  }
+  .photo-item { position: relative; animation: fadeInUp 0.6s ease both; }
+  @keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .photo-frame {
+    background: white; padding: 16px 16px 64px;
+    border: 1px solid rgba(196,154,130,0.25);
+    box-shadow: 2px 2px 8px rgba(61,43,43,0.1), 5px 5px 0 rgba(196,154,130,0.12);
+    position: relative; transition: transform 0.3s ease, box-shadow 0.3s ease; cursor: pointer;
+  }
+  .photo-frame:hover { box-shadow: 6px 6px 20px rgba(61,43,43,0.15), 10px 10px 0 rgba(196,154,130,0.18); }
+  .photo-item:nth-child(3n)   .photo-frame { transform: rotate(1.5deg); }
+  .photo-item:nth-child(3n)   .photo-frame:hover { transform: rotate(1.5deg) scale(1.04); }
+  .photo-item:nth-child(3n+1) .photo-frame { transform: rotate(-2deg); }
+  .photo-item:nth-child(3n+1) .photo-frame:hover { transform: rotate(-2deg) scale(1.04); }
+  .photo-item:nth-child(3n+2) .photo-frame { transform: rotate(0.8deg); }
+  .photo-item:nth-child(3n+2) .photo-frame:hover { transform: rotate(0.8deg) scale(1.04); }
+  .photo-frame::before {
+    content: ''; position: absolute; width: 44px; height: 16px;
+    background: var(--tape); top: -8px; left: 50%;
+    transform: translateX(-50%) rotate(-2deg); border-radius: 1px; z-index: 2;
+  }
+  .photo-item:nth-child(even) .photo-frame::before {
+    background: var(--tape2); transform: translateX(-50%) rotate(2deg);
+  }
+  .photo-img {
+    width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block;
+  }
+  .photo-img-placeholder {
+    width: 100%; aspect-ratio: 4/3;
+    background: linear-gradient(135deg, var(--warm) 0%, var(--blush) 50%, var(--warm) 100%);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--dusty); font-size: 2.5rem; font-family: 'Dancing Script', cursive; user-select: none;
+  }
+  .photo-date {
+    position: absolute; bottom: 10px; left: 0; right: 0;
+    text-align: center; font-family: 'Dancing Script', cursive;
+    font-size: 0.82rem; color: var(--dusty); padding: 0 8px; line-height: 1.4; direction: rtl;
+  }
+  .photo-date span { font-size: 0.75rem; color: var(--wine); display: block; margin-top: 2px; }
+  .hidden-section { padding: 80px 20px; text-align: center; }
+  .unlock-area { display: inline-block; cursor: pointer; position: relative; }
+  .lock-icon {
+    font-size: 3rem; display: block; margin-bottom: 12px;
+    animation: wiggle 3s ease-in-out infinite;
+  }
+  @keyframes wiggle {
+    0%, 90%, 100% { transform: rotate(0deg); }
+    92% { transform: rotate(-8deg); }
+    94% { transform: rotate(8deg); }
+    96% { transform: rotate(-5deg); }
+    98% { transform: rotate(5deg); }
+  }
+  .unlock-hint { font-size: 0.85rem; color: var(--blush); letter-spacing: 1px; text-transform: uppercase; }
+  .hidden-message {
+    display: none; max-width: 600px; margin: 0 auto;
+    background: white; border: 1px solid rgba(196,154,130,0.3);
+    padding: 48px; border-radius: 2px;
+    box-shadow: 3px 3px 0 rgba(196,154,130,0.15);
+    animation: revealMsg 0.6s ease;
+  }
+  @keyframes revealMsg {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hidden-message p {
+    font-family: 'Dancing Script', cursive; font-size: 1.5rem;
+    color: var(--wine); line-height: 1.9; direction: rtl; margin-bottom: 8px;
+  }
+  .hidden-message p:last-child { margin-bottom: 0; }
+  .music-note {
+    position: fixed; bottom: 28px; right: 28px;
+    width: 52px; height: 52px; background: var(--wine); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; box-shadow: 0 4px 16px rgba(139,74,74,0.35);
+    z-index: 100; transition: transform 0.2s, box-shadow 0.2s; font-size: 1.3rem;
+  }
+  .music-note:hover { transform: scale(1.1); box-shadow: 0 6px 20px rgba(139,74,74,0.45); }
+  .floater {
+    position: fixed; pointer-events: none; z-index: 200;
+    font-size: 1.2rem; animation: floatUp 3s ease forwards;
+  }
+  @keyframes floatUp {
+    0% { opacity: 1; transform: translateY(0) scale(1); }
+    100% { opacity: 0; transform: translateY(-140px) scale(0.5); }
+  }
+  footer {
+    text-align: center; padding: 60px 20px 40px;
+    color: var(--blush); font-size: 0.85rem; letter-spacing: 1px;
+  }
+  footer .big-heart { font-size: 2rem; display: block; margin-bottom: 12px; animation: heartbeat 2s ease-in-out infinite; }
+  @media (max-width: 600px) {
+    .hero-inner { padding: 40px 28px; }
+    .photos-grid { grid-template-columns: 1fr 1fr; gap: 20px; }
+    .hidden-message { padding: 32px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <h1 class="site-title">One Year of Love</h1>
+    <p class="names">Martina &amp; David</p>
+    <div class="date-badge">2 · 6 · 2025 — 2 · 6 · 2026</div>
+    <div class="days-counter">
+      <span class="days-number" id="dayCount">365</span>
+      <span class="days-label">days of us ❤️</span>
+    </div>
+  </div>
+  <div class="scroll-hint">↓</div>
+</section>
+
+<!-- PHOTOS -->
+<section class="photos-section">
+  <h2 class="section-heading">Our Moments 📸</h2>
+  <div class="photos-grid" id="photosGrid"></div>
+</section>
+
+<!-- HIDDEN MESSAGE -->
+<section class="hidden-section">
+  <h2 class="section-heading" style="margin-bottom:32px">A Little Secret 🤫</h2>
+  <div class="unlock-area" id="unlockArea" onclick="revealSecret()">
+    <span class="lock-icon">🔒</span>
+    <span class="unlock-hint">Tap to unlock a hidden message</span>
+  </div>
+  <div class="hidden-message" id="hiddenMsg">
+    <p>شكرا على وجودك السنة دى فى كل حاجة 💫</p>
+    <p>شكرا على حبك .. على محاولتك دايما انك تبسطنى</p>
+    <p>شكرا انك دايما بتحاول عشانا 🤍</p>
+    <p>شكرا انك احلى واجمل حاجة فى الدنيا 🌍</p>
+    <p>هتفضل احلى حاجة حصلت لى</p>
+    <p>انا بحبك من كل قلبى ❤️‍🔥</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span class="big-heart">❤️</span>
+  Martina &amp; David · One Year of Love · 2025–2026
+</footer>
+
+<div class="music-note" onclick="spawnHearts()" title="Send some love!">🎵</div>
+
+<script>
+  // Day counter
+  const start = new Date('2025-06-02');
+  const today = new Date();
+  const diff = Math.floor((today - start) / (1000 * 60 * 60 * 24));
+  document.getElementById('dayCount').textContent = diff > 0 ? diff : 365;
+
+  // Photos data — 16 photos (figure1 to figure16)
+  const photos = [
+    { date: '2 Jun 2025',  label: 'Happy Anniversary Habibiiii 😍', emoji: '😍' },
+    { date: '18 Jun 2025', label: 'Awel tawsila w e7na mtsahbin 🚗', emoji: '🚗' },
+    { date: '25 Jun 2025', label: 'Awel mara t2oli ba7ebek ❤️', emoji: '❤️' },
+    { date: '29 Jun 2025', label: 'Awel 3id milad leya w e7na sawa 🎂', emoji: '🎂' },
+    { date: '26 Jul 2025', label: 'Awel masket iid 🤝', emoji: '🤝' },
+    { date: '21 Aug 2025', label: 'Lama zabat el interview tgili cairo ma5sos ✈️', emoji: '✈️' },
+    { date: '15 Sep 2025', label: '3id milad a7la wa7ed fel donia 🎉', emoji: '🎉' },
+    { date: '22 Sep 2025', label: "El etefa2 el mesh mwatera 5ales 🤫", emoji: '🤫' },
+    { date: '24 Sep 2025', label: 'Agmal yom f hayaty w ba7ebak mooot 💫', emoji: '💫' },
+    { date: '27 Sep 2025', label: 'Our favorite picture 📸', emoji: '📸' },
+    { date: '26 Dec 2025', label: 'Awel 7odn 🤗', emoji: '🤗' },
+    { date: '27 Dec 2025', label: 'Tani soretna el mofadalaaa 📸', emoji: '📷' },
+    { date: '24 Feb 2026', label: 'Yom ma estlamna el shabka 💍', emoji: '💍' },
+    { date: '12 Apr 2026', label: 'El amar f soura?? ✨', emoji: '✨' },
+    { date: '6 May 2026',  label: 'Agmal date f Cairo 🌆', emoji: '🌆' },
+    { date: '',            label: 'لو عايز تفتكرني اسمع الأغنية دي 🎵', emoji: '🎵' },
+  ];
+
+  const grid = document.getElementById('photosGrid');
+
+  photos.forEach((item, i) => {
+    const num = i + 1;
+    const el = document.createElement('div');
+    el.className = 'photo-item';
+    el.style.animationDelay = (i * 0.08) + 's';
+    el.innerHTML =
+      '<div class="photo-frame">' +
+        '<img class="photo-img" src="figure' + num + (num === 16 ? '.png' : '.jpg') + '" alt="Memory ' + num + '" ' +
+          'onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\';" />' +
+        '<div class="photo-img-placeholder" style="display:none;">' + item.emoji + '</div>' +
+        '<div class="photo-date">' +
+          (item.date ? item.date + '<br>' : '') +
+          '<span>' + item.label + '</span>' +
+        '</div>' +
+      '</div>';
+    grid.appendChild(el);
+  });
+
+  // Hidden message unlock
+  function revealSecret() {
+    document.getElementById('unlockArea').style.display = 'none';
+    document.getElementById('hiddenMsg').style.display = 'block';
+    spawnHearts();
+  }
+
+  // Floating hearts
+  function spawnHearts() {
+    var emojis = ['❤️','💕','💖','💗','🌹','✨','💫'];
+    for (var i = 0; i < 7; i++) {
+      (function(idx) {
+        setTimeout(function() {
+          var el = document.createElement('div');
+          el.className = 'floater';
+          el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+          el.style.left = (Math.random() * 90) + 'vw';
+          el.style.bottom = '80px';
+          document.body.appendChild(el);
+          setTimeout(function() { el.remove(); }, 3100);
+        }, idx * 120);
+      })(i);
+    }
+  }
+</script>
+</body>
+</html>
